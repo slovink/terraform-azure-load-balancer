@@ -12,7 +12,7 @@ module "resource_group" {
 }
 
 module "vnet" {
-  source = "git::git@github.com:krishanyadav86/terraform-azure-vnet.git?ref=1.0.0"
+  source = "git::git@github.com:slovink/terraform-azure-vnet.git?ref=1.0.0"
 
   name                = "app"
   environment         = "test"
