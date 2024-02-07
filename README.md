@@ -47,7 +47,7 @@ This module has a few dependencies:
 Here is an example of how you can use this module in your inventory structure:
   ```hcl
 module "load-balancer" {
-  source = "../"
+  source = "../."
 
   #   Labels
   name        = "app"
