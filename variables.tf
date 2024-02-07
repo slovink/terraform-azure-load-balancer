@@ -6,11 +6,11 @@ variable "name" {
   description = "Name  (e.g. `app` or `cluster`)."
 }
 
-variable "application" {
-  type        = string
-  default     = ""
-  description = ""
-}
+#variable "application" {
+#  type        = string
+#  default     = ""
+#  description = ""
+#}
 
 variable "environment" {
   type        = string
@@ -18,16 +18,16 @@ variable "environment" {
   description = "Environment (e.g. `prod`, `dev`, `staging`)."
 }
 
-variable "tags" {
-  type        = map(any)
-  default     = {}
-  description = "Additional tags (e.g. map(`BusinessUnit`,`XYZ`)."
-}
+#variable "tags" {
+#  type        = map(any)
+#  default     = {}
+#  description = "Additional tags (e.g. map(`BusinessUnit`,`XYZ`)."
+#}
 
 variable "managedby" {
   type        = string
-  default     = ""
-  description = ""
+  default     = "contact@slovink.com"
+  description = "managedby,'eg slovink',"
 }
 
 variable "label_order" {
@@ -49,11 +49,11 @@ variable "ip_count" {
   description = "Number of Public IP Addresses to create."
 }
 
-variable "net_count" {
-  type        = number
-  default     = 0
-  description = "Number of network Addresses to create."
-}
+#variable "net_count" {
+#  type        = number
+#  default     = 0
+#  description = "Number of network Addresses to create."
+#}
 
 variable "enabled" {
   type        = bool
@@ -176,23 +176,23 @@ variable "frontend_name" {
   default     = "myip"
 }
 
-variable "frontend_private_ip_address" {
-  description = "(Optional) Private ip address to assign to frontend. Use it with type = private"
-  type        = string
-  default     = ""
-}
+#variable "frontend_private_ip_address" {
+#  description = "(Optional) Private ip address to assign to frontend. Use it with type = private"
+#  type        = string
+#  default     = ""
+#}
 
-variable "frontend_private_ip_address_allocation" {
-  description = "(Optional) Frontend ip allocation type (Static or Dynamic)"
-  type        = string
-  default     = "Dynamic"
-}
+#variable "frontend_private_ip_address_allocation" {
+#  description = "(Optional) Frontend ip allocation type (Static or Dynamic)"
+#  type        = string
+#  default     = "Dynamic"
+#}
 
-variable "frontend_subnet_id" {
-  description = "(Optional) Frontend subnet id to use when in private mode"
-  type        = string
-  default     = ""
-}
+#variable "frontend_subnet_id" {
+#  description = "(Optional) Frontend subnet id to use when in private mode"
+#  type        = string
+#  default     = ""
+#}
 
 variable "lb_port" {
   description = "Protocols to be used for lb rules. Format as [frontend_port, protocol, backend_port]"
