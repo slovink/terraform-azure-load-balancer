@@ -51,7 +51,7 @@ module "subnet" {
 
 
 module "load-balancer" {
-  source = "../"
+  source = "../."
 
   #   Labels
   name        = "app"
