@@ -93,7 +93,7 @@ module "load-balancer" {
   ```
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/slovink/terraform-azure-load-balancer/blob/krishna/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/slovink/terraform-azure-load-balancer/blob/dev/LICENSE) file for details.
 
 # Examples
 For detailed examples on how to use this module, please refer to the '[example](https://github.com/slovink/terraform-azure-load-balancer/tree/dev/_example)' directory within this repository.
