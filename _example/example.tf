@@ -3,7 +3,7 @@ provider "azurerm" {
 }
 
 module "resource_group" {
-  source  = "git::git@github.com:slovink/terraform-azure-resource-group.git"
+  source = "git::git@github.com:slovink/terraform-azure-resource-group.git?ref=1.0.0"
 
   name        = "app-lb"
   environment = "test"
@@ -12,7 +12,7 @@ module "resource_group" {
 }
 
 module "vnet" {
-  source  = "git::git@github.com:slovink/terraform-azure-vnet.git"
+  source = "git::git@github.com:slovink/terraform-azure-vnet.git?ref=1.0.0"
 
   name                = "app"
   environment         = "test"
@@ -24,14 +24,14 @@ module "vnet" {
 }
 
 module "subnet" {
-  source  = "git::git@github.com:slovink/terraform-azure-subnet.git"
+  source = "git::git@github.com:slovink/terraform-azure-subnet.git?ref=1.0.0"
 
   name                 = "app"
   environment          = "test"
   label_order          = ["name", "environment"]
   resource_group_name  = module.resource_group.resource_group_name
   location             = module.resource_group.resource_group_location
-  virtual_network_name = join("", module.vnet.vnet_name)
+  virtual_network_name = module.vnet.name
 
   #subnet
   default_name_subnet = true
@@ -51,7 +51,7 @@ module "subnet" {
 
 
 module "load-balancer" {
-  source = "../"
+  source = "../."
 
   #   Labels
   name        = "app"
@@ -78,7 +78,7 @@ module "load-balancer" {
   ip_version        = "IPv4"
 
   remote_port = {
-    ssh = ["Tcp", "22"]
+    ssh   = ["Tcp", "22"]
     https = ["Tcp", "80"]
   }
 
